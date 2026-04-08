@@ -3,13 +3,13 @@
 
 
 <suite name="Master Suite">
-	
+
 	<listeners>
-	<listener class-name="utilities.ExtentReportManager"/>
-	
+		<listener class-name="utilities.ExtentReportManager" />
+
 	</listeners>
-	
-	
+
+
 	<test thread-count="5" name="Test">
 
 		<parameter name="os" value="Windows"></parameter>
@@ -17,9 +17,10 @@
 
 		<classes>
 			<class name="testCases.TC001_AccountRegistrationTest" />
-			
+
 			<class name="testCases.TC002_LoginTest" />
-		<!-- -		<class name="testCases.TC003_LoginDDT" />-->
+		<!--<class name="testCases.TC003_LoginDDT" />-->
+			<class name="testCases.TC004_Search" />
 		</classes>
 	</test>
-	 </suite> <!--Suite -->
+</suite> <!--Suite -->

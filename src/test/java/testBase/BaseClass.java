@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.net.URL;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -16,6 +18,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,7 +33,7 @@ public class BaseClass {
 	public Logger logger;
 	public Properties p;
 
-	@BeforeClass(groups={"Sanity","Regression","Master"})
+	@BeforeClass(groups = { "Sanity", "Regression", "Master" })
 	@Parameters({ "os", "browser" })
 	public void setup(String os, String br) throws IOException {
 
@@ -38,57 +41,82 @@ public class BaseClass {
 		FileReader file = new FileReader(".//src//test//resources//config.properties");
 		p = new Properties();
 		p.load(file);
-       //log4j2 added
+		// log4j2 added
 		logger = LogManager.getLogger(this.getClass());// log4J2
 
 		// driver = new ChromeDriver();
 
-		if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
-		{
-			DesiredCapabilities capabilities=new DesiredCapabilities();
-			
-			//os
-			if(os.equalsIgnoreCase("windows"))
-			{
+		if (p.getProperty("execution_env").equalsIgnoreCase("remote")) {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+
+			// os
+			if (os.equalsIgnoreCase("windows")) {
 				capabilities.setPlatform(Platform.WIN11);
-			}
-			else if(os.equalsIgnoreCase("linux"))
-			{
+			} else if (os.equalsIgnoreCase("linux")) {
 				capabilities.setPlatform(Platform.LINUX);
-				
-			}
-			else if (os.equalsIgnoreCase("mac"))
-			{
+
+			} else if (os.equalsIgnoreCase("mac")) {
 				capabilities.setPlatform(Platform.MAC);
-			}
-			else
-			{
+			} else {
 				System.out.println("No matching os");
 				return;
 			}
-			
-			//browser
-			switch(br.toLowerCase())
-			{
-			case "chrome": capabilities.setBrowserName("chrome"); break;
-			case "edge": capabilities.setBrowserName("MicrosoftEdge"); break;
-			case "firefox": capabilities.setBrowserName("firefox"); break;
-			default: System.out.println("No matching browser"); return;
-			}
-			
-			driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
-		}
-		
-				//Local Env==>
-		if(p.getProperty("execution_env").equalsIgnoreCase("local"))
-		{
 
-			switch(br.toLowerCase())
-			{
-			case "chrome" : driver=new ChromeDriver(); break;
-			case "edge" : driver=new EdgeDriver(); break;
-			case "firefox": driver=new FirefoxDriver(); break;
-			default : System.out.println("Invalid browser name.."); return;
+			// browser
+			switch (br.toLowerCase()) {
+			/*
+			 * case "chrome": capabilities.setBrowserName("chrome"); break;
+			 */
+			case "chrome":
+
+			    ChromeOptions options = new ChromeOptions();
+
+			    // 🔥 Disable password popup
+			    Map<String, Object> prefs = new HashMap<>();
+			    prefs.put("credentials_enable_service", false);
+			    prefs.put("profile.password_manager_enabled", false);
+
+			    options.setExperimentalOption("prefs", prefs);
+
+			    // 🔥 Extra stability (5 yr level)
+			    options.addArguments("--disable-notifications");
+			    options.addArguments("--disable-infobars");
+			    options.addArguments("--start-maximized");
+
+			    driver = new ChromeDriver(options);
+
+			    break;
+			
+			case "edge":
+				capabilities.setBrowserName("MicrosoftEdge");
+				break;
+			case "firefox":
+				capabilities.setBrowserName("firefox");
+				break;
+			default:
+				System.out.println("No matching browser");
+				return;
+			}
+
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+		}
+
+		// Local Env==>
+		if (p.getProperty("execution_env").equalsIgnoreCase("local")) {
+
+			switch (br.toLowerCase()) {
+			case "chrome":
+				driver = new ChromeDriver();
+				break;
+			case "edge":
+				driver = new EdgeDriver();
+				break;
+			case "firefox":
+				driver = new FirefoxDriver();
+				break;
+			default:
+				System.out.println("Invalid browser name..");
+				return;
 			}
 		}
 
@@ -102,7 +130,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 	}
 
-	@AfterClass(groups={"Sanity","Regression","Master"})
+	@AfterClass(groups = { "Sanity", "Regression", "Master" })
 	public void tearDown() {
 		driver.quit();
 	}
@@ -123,18 +151,19 @@ public class BaseClass {
 
 		return (generatedString + "@" + generatedNumber);
 	}
+
 	public String captureScreen(String tname) throws IOException {
 
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-				
+
 		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-		
-		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
-		File targetFile=new File(targetFilePath);
-		
+
+		String targetFilePath = System.getProperty("user.dir") + "\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile = new File(targetFilePath);
+
 		sourceFile.renameTo(targetFile);
-			
+
 		return targetFilePath;
 
 	}
