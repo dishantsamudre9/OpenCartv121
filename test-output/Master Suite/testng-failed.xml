@@ -8,13 +8,13 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC004_Search">
+      <class name="testCases.TC005_mobilelink">
         <methods>
-          <include name="verify_text"/>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="mobile_isClick"/>
         </methods>
-      </class> <!-- testCases.TC004_Search -->
+      </class> <!-- testCases.TC005_mobilelink -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Master Suite] -->
