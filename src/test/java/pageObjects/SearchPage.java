@@ -19,10 +19,10 @@ public class SearchPage extends BasePage {
 
 	@FindBy(xpath = "//div[@id=\"content\"]//h1")
 	WebElement GetTextMobile;
-	
+
 	@FindBy(xpath = "//*[@id=\"menu\"]/div[2]/ul/li[7]/a")
 	WebElement cameraclick;
-	
+
 	public void searchbarclick() {
 		Searchtextproduct.click();
 	}
@@ -38,14 +38,15 @@ public class SearchPage extends BasePage {
 	public String getMobileText() {
 		return GetTextMobile.getText();
 	}
-	
+
 	public void clickcameralink() {
 		cameraclick.click();
 	}
+
 	public String getcamerapagetext() {
-		
+
 		String text;
-	return  text = cameraclick.getText();
+		return text = cameraclick.getText();
 	}
 
 }

@@ -8,13 +8,13 @@
     <parameter name="os" value="Windows"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC005_mobilelink">
+      <class name="testCases.TC006_VerifycameraAddtocart">
         <methods>
           <include name="tearDown"/>
+          <include name="verifyCameraAddToCart"/>
           <include name="setup"/>
-          <include name="mobile_isClick"/>
         </methods>
-      </class> <!-- testCases.TC005_mobilelink -->
+      </class> <!-- testCases.TC006_VerifycameraAddtocart -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Master Suite] -->

@@ -3,3 +3,59 @@
 20:31: 22. 938 [main] INFO  testCases.TC004_Search - +++++++End text is verified+++++++++++++++++++
 20:31: 27. 262 [main] INFO  testCases.TC005_mobilelink - ***Starting TC005 Search
 20:31: 34. 373 [main] INFO  testCases.TC005_mobilelink - Cameras
+20:57: 02. 683 [main] INFO  testCases.TC001_AccountRegistrationTest - Starting TC_001
+20:57: 03. 026 [main] INFO  testCases.TC001_AccountRegistrationTest - Clicked my account
+20:57: 04. 391 [main] INFO  testCases.TC001_AccountRegistrationTest - Click on Register
+20:57: 04. 395 [main] INFO  testCases.TC001_AccountRegistrationTest - Providing details
+20:57: 07. 413 [main] INFO  testCases.TC001_AccountRegistrationTest - Validating expected message
+20:57: 07. 474 [main] INFO  testCases.TC001_AccountRegistrationTest - ++++Finished TC001_Account Registration+++
+20:57: 11. 899 [main] INFO  testCases.TC002_LoginTest - ****starting tc001 login******
+20:57: 14. 743 [main] INFO  testCases.TC002_LoginTest - assert pass
+20:57: 14. 743 [main] INFO  testCases.TC002_LoginTest - ++++++Finished TC_002Login Test++++
+20:57: 20. 031 [main] INFO  testCases.TC004_Search - ***Starting TC004 Search
+20:57: 23. 304 [main] INFO  testCases.TC004_Search - +++++++End text is verified+++++++++++++++++++
+20:57: 27. 074 [main] INFO  testCases.TC005_mobilelink - ***Starting TC005 Search
+20:57: 29. 987 [main] INFO  testCases.TC005_mobilelink - Cameras
+18:22: 18. 158 [main] INFO  testCases.TC001_AccountRegistrationTest - Starting TC_001
+18:22: 18. 444 [main] INFO  testCases.TC001_AccountRegistrationTest - Clicked my account
+18:22: 19. 243 [main] INFO  testCases.TC001_AccountRegistrationTest - Click on Register
+18:22: 19. 269 [main] INFO  testCases.TC001_AccountRegistrationTest - Providing details
+18:22: 23. 645 [main] INFO  testCases.TC001_AccountRegistrationTest - Validating expected message
+18:22: 23. 698 [main] INFO  testCases.TC001_AccountRegistrationTest - ++++Finished TC001_Account Registration+++
+18:22: 28. 020 [main] INFO  testCases.TC002_LoginTest - ****starting tc001 login******
+18:22: 34. 068 [main] INFO  testCases.TC002_LoginTest - assert pass
+18:22: 34. 068 [main] INFO  testCases.TC002_LoginTest - ++++++Finished TC_002Login Test++++
+18:22: 37. 293 [main] INFO  testCases.TC004_Search - ***Starting TC004 Search
+18:22: 41. 081 [main] INFO  testCases.TC004_Search - +++++++End text is verified+++++++++++++++++++
+18:22: 46. 608 [main] INFO  testCases.TC005_mobilelink - ***Starting TC005 Search
+18:22: 51. 473 [main] INFO  testCases.TC005_mobilelink - Cameras
+18:22: 55. 781 [main] INFO  testCases.TC006_VerifycameraAddtocart - ***Starting TC006 AddtoCart
+18:25: 16. 560 [main] INFO  testCases.TC001_AccountRegistrationTest - Starting TC_001
+18:25: 16. 772 [main] INFO  testCases.TC001_AccountRegistrationTest - Clicked my account
+18:25: 17. 605 [main] INFO  testCases.TC001_AccountRegistrationTest - Click on Register
+18:25: 17. 608 [main] INFO  testCases.TC001_AccountRegistrationTest - Providing details
+18:25: 20. 126 [main] INFO  testCases.TC001_AccountRegistrationTest - Validating expected message
+18:25: 20. 170 [main] INFO  testCases.TC001_AccountRegistrationTest - ++++Finished TC001_Account Registration+++
+18:25: 23. 317 [main] INFO  testCases.TC002_LoginTest - ****starting tc001 login******
+18:25: 26. 919 [main] INFO  testCases.TC002_LoginTest - assert pass
+18:25: 26. 920 [main] INFO  testCases.TC002_LoginTest - ++++++Finished TC_002Login Test++++
+18:25: 29. 904 [main] INFO  testCases.TC004_Search - ***Starting TC004 Search
+18:25: 33. 087 [main] INFO  testCases.TC004_Search - +++++++End text is verified+++++++++++++++++++
+18:25: 36. 156 [main] INFO  testCases.TC005_mobilelink - ***Starting TC005 Search
+18:25: 38. 668 [main] INFO  testCases.TC005_mobilelink - Cameras
+18:25: 41. 903 [main] INFO  testCases.TC006_VerifycameraAddtocart - ***Starting TC006 AddtoCart
+18:28: 38. 885 [main] INFO  testCases.TC001_AccountRegistrationTest - Starting TC_001
+18:28: 39. 196 [main] INFO  testCases.TC001_AccountRegistrationTest - Clicked my account
+18:28: 39. 944 [main] INFO  testCases.TC001_AccountRegistrationTest - Click on Register
+18:28: 39. 947 [main] INFO  testCases.TC001_AccountRegistrationTest - Providing details
+18:28: 42. 469 [main] INFO  testCases.TC001_AccountRegistrationTest - Validating expected message
+18:28: 42. 517 [main] INFO  testCases.TC001_AccountRegistrationTest - ++++Finished TC001_Account Registration+++
+18:28: 45. 896 [main] INFO  testCases.TC002_LoginTest - ****starting tc001 login******
+18:28: 49. 347 [main] INFO  testCases.TC002_LoginTest - assert pass
+18:28: 49. 349 [main] INFO  testCases.TC002_LoginTest - ++++++Finished TC_002Login Test++++
+18:28: 52. 562 [main] INFO  testCases.TC004_Search - ***Starting TC004 Search
+18:28: 55. 865 [main] INFO  testCases.TC004_Search - +++++++End text is verified+++++++++++++++++++
+18:29: 00. 391 [main] INFO  testCases.TC005_mobilelink - ***Starting TC005 Search
+18:29: 03. 979 [main] INFO  testCases.TC005_mobilelink - Cameras
+18:29: 04. 027 [main] INFO  testCases.TC005_mobilelink - ***End TC005 Search
+18:29: 07. 113 [main] INFO  testCases.TC006_VerifycameraAddtocart - ***Starting TC006 AddtoCart
